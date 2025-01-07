@@ -1,7 +1,9 @@
 package com.suzintech.cobranca.infra.persistence.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -10,6 +12,8 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @MappedSuperclass
 public class BaseEntity {
 
@@ -18,7 +22,7 @@ public class BaseEntity {
     private Long id;
 
     @CreationTimestamp
-    @Column(name = "dh_criacao")
+    @Column(name = "dh_criacao", nullable = false)
     private LocalDateTime criadoEm;
 
     @UpdateTimestamp

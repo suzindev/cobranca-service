@@ -13,10 +13,10 @@ import lombok.Setter;
 @Table(name = "tb_empresa")
 public class EmpresaEntity extends BaseEntity {
 
-    @Column(name = "razao_social")
+    @Column(name = "razao_social", length = 70, nullable = false)
     private String razaoSocial;
 
-    @Column(name = "cnpj")
+    @Column(name = "cnpj", length = 20, nullable = false)
     private String cnpj;
 
     @Embedded

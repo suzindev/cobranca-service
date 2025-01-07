@@ -10,23 +10,23 @@ import lombok.Setter;
 @Table(name = "tb_conta")
 public class ContaEntity extends BaseEntity {
 
-    @Column(name = "agencia")
+    @Column(name = "agencia", length = 10, nullable = false)
     private String agencia;
 
-    @Column(name = "conta")
+    @Column(name = "conta", length = 15, nullable = false)
     private String conta;
 
-    @Column(name = "digito_agencia")
+    @Column(name = "digito_agencia", length = 1)
     private String digitoAgencia;
 
-    @Column(name = "digito_conta")
+    @Column(name = "digito_conta", length = 1, nullable = false)
     private String digitoConta;
 
     @ManyToOne
-    @JoinColumn(name = "id_banco")
+    @JoinColumn(name = "id_banco", nullable = false)
     private BancoEntity banco;
 
     @ManyToOne
-    @JoinColumn(name = "id_empresa")
+    @JoinColumn(name = "id_empresa", nullable = false)
     private EmpresaEntity empresa;
 }
